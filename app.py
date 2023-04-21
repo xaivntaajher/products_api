@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate
 from flask_restful import Api, Resource
-from marshmallow import post_load, fiels
+from marshmallow import post_load, fields, ValidationError
 from dotenv import load_dotenv
 from os import environ
 
@@ -34,8 +34,16 @@ class Products(db.Model):
 
 # Schemas
 class ProductSchema(ma.Schema):
+    id = fields.Integer(primary_key=True)
+    name = fields.String(required=True)
+    description = fields.String(required=True)
+    price = fields.Float(required=True)
+    inventory_quantity = fields.Integer()
+
     class Meta:
         fields = ("id", "name", "description", "price", "inventory_quantity")
+
+    
 
 product_schema = ProductSchema()
 products_schema = ProductSchema(many = True)
