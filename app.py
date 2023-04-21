@@ -23,7 +23,12 @@ CORS(app)
 Migrate(app, db)
 
 # Models
-
+class Products(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(255), nullable = False)
+    description = db.Column(db.String(255), nullable = False)
+    price = db.Column(db.Float, nullable = False)
+    inventory_quantity = db.Column(db.Integer)
 
 
 # Schemas
