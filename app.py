@@ -31,7 +31,6 @@ class Products(db.Model):
     price = db.Column(db.Float, nullable = False)
     inventory_quantity = db.Column(db.Integer)
 
-
 # Schemas
 class ProductSchema(ma.Schema):
     id = fields.Integer(primary_key=True)
@@ -49,7 +48,6 @@ class ProductSchema(ma.Schema):
 
 product_schema = ProductSchema()
 products_schema = ProductSchema(many = True)
-
 
 # Resources
 class ProductListResource(Resource):
