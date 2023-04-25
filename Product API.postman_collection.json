@@ -36,7 +36,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5000/api/products/2",
+					"raw": "http://127.0.0.1:5000/api/products/7",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -48,7 +48,7 @@
 					"path": [
 						"api",
 						"products",
-						"2"
+						"7"
 					]
 				}
 			},
@@ -60,7 +60,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5000/api/products/2",
+					"raw": "http://127.0.0.1:5000/api/products/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -72,7 +72,7 @@
 					"path": [
 						"api",
 						"products",
-						"2"
+						""
 					]
 				}
 			},
@@ -117,7 +117,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n        \"inventory_quantity\": 15,\r\n        \"price\": 15.00,\r\n        \"description\": \"It's very fast and slow\",\r\n        \"name\": \"Flying Bike\"\r\n    }",
+					"raw": "    {\r\n        \"inventory_quantity\": 102,\r\n        \"price\": 2500.00,\r\n        \"description\": \"Just hope it doesnt burn\",\r\n        \"name\": \"Jet Pack\",\r\n        \"image_link\": \"https://www.secretflying.com/posts/jetpack-man-spotted-flying-6000-feet-over-lax-airport-for-a-second-time/\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -125,7 +125,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/api/products/6",
+					"raw": "http://127.0.0.1:5000/api/products/7",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -137,7 +137,7 @@
 					"path": [
 						"api",
 						"products",
-						"6"
+						"7"
 					]
 				}
 			},

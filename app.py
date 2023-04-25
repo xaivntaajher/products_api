@@ -30,6 +30,7 @@ class Products(db.Model):
     description = db.Column(db.String(255), nullable = False)
     price = db.Column(db.Float, nullable = False)
     inventory_quantity = db.Column(db.Integer)
+    image_link = db.Column(db.String(255))
 
 # Schemas
 class ProductSchema(ma.Schema):
@@ -38,9 +39,10 @@ class ProductSchema(ma.Schema):
     description = fields.String(required=True)
     price = fields.Float(required=True)
     inventory_quantity = fields.Integer()
+    image_link = fields.String()
 
     class Meta:
-        fields = ("id", "name", "description", "price", "inventory_quantity")
+        fields = ("id", "name", "description", "price", "inventory_quantity","image_link")
 
     @post_load
     def create_product(self, data, **kwargs):
@@ -86,6 +88,8 @@ class ProductResource(Resource):
             product_from_db.price = request.json['price']
         if 'inventory_quantity' in request.json:
             product_from_db.inventory_quantity = request.json['inventory_quantity']
+        if 'image_link' in request.json:
+            product_from_db.image_link = request.json['image_link']
 
         db.session.commit()
         return product_schema.dump(product_from_db)
